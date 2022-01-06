@@ -1,0 +1,19 @@
+import { {{pascalCase name}} } from '../src/components/{{pascalCase name}}'
+import { Meta, Story } from '@storybook/react/types-6-0'
+
+export default {
+  title: '{{pascalCase name}}',
+  component: {{pascalCase name}}
+} as Meta
+
+const Template: Story = ({ title, description }) => (
+  <{{pascalCase name}} title={title} description={description} />
+)
+
+export const Default = Template.bind({})
+Default.args = {
+  title: 'Guia do Mochileiro Dev',
+  description:
+    'Projeto desenvolvido de devs para devs. Nosso intuito é te ajudar a resolver os problemas aos quais nós já passamos e conseguimos resolver :D'
+}
+

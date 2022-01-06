@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Main /> should render page 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #1f1635ff;
+  color: #fff;
+}
+
+.c0 h1 {
+  font-size: 3.5rem;
+}
+
+.c0 h3 {
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+<div
+  class="c0"
+>
+  <h1>
+    Guia do Mochileiro Dev
+  </h1>
+  <h3>
+    Projeto desenvolvido de devs para devs. Nosso intuito é te ajudar a resolver os problemas aos quais nós já passamos e conseguimos resolver :D
+  </h3>
+</div>
+`;
