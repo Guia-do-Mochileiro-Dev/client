@@ -3,12 +3,18 @@ export type ImageProps = {
   alternativeText: string
 }
 
+export type SocialLinks = {
+  title: string
+  url: string
+}
+
 export type AuthorProps = {
   id: number
   name: string
   photo: ImageProps
   role: string
   description: string
+  socialLinks: SocialLinks[]
 }
 
 export type AuthorsProps = {
