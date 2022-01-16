@@ -28,6 +28,10 @@ export type PostProps = {
   title: string
   text: string
   slug: string
+  author: {
+    name: string
+    photo: ImageProps
+  }
 }
 
 export type PostsProps = {

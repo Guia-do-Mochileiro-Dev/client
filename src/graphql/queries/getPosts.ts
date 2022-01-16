@@ -16,6 +16,12 @@ const GET_POSTS = gql`
       title
       text
       slug
+      author {
+        name
+        photo {
+          ...imageData
+        }
+      }
     }
   }
 `
