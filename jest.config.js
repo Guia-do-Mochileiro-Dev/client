@@ -8,6 +8,8 @@ module.exports = {
     '!src/types/**/*.d.ts',
     '!src/graphql/**/*.ts',
     '!src/api/*.ts',
+    '!src/types/*.ts',
+    '!src/themes/theme.ts',
     '!src/styles/**/*.ts',
     '!src/**/mock.ts',
     '!src/pages/_document.tsx',
