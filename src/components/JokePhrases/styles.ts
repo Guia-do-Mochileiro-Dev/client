@@ -17,6 +17,7 @@ export const Container = styled.div`
         border-radius: ${theme.border.radius};
         width: 100%;
         box-shadow: 0px 3px 6px #00000029;
+        background-color: ${theme.colors.white};
         padding: 5rem;
       }
     `};

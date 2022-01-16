@@ -33,6 +33,7 @@ export const Logo = styled.img`
     css`
       && {
         width: 13.5rem;
+        cursor: pointer;
       }
     `}
 `

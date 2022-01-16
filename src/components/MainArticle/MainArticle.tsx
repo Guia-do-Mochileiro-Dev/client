@@ -2,6 +2,7 @@ import Link from 'next/link'
 import * as S from './styles'
 import { Author } from 'components/Author'
 import { PostProps } from 'types/api'
+import { getImageUrl } from 'utils/getImageUrl'
 
 export const MainArticle = ({
   id,
@@ -19,7 +20,7 @@ export const MainArticle = ({
     <Link href={`/article/${slug}`}>
       <S.Container aria-label="main article" id={id}>
         <S.Cover
-          src={cover.url}
+          src={getImageUrl(cover.url)}
           alternativeText={cover.alternativeText}
           loading="lazy"
         />
