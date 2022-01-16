@@ -24,6 +24,7 @@ export type AuthorsProps = {
 export type PostProps = {
   id: number
   cover: ImageProps
+  created_at: string
   title: string
   text: string
   slug: string

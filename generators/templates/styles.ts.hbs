@@ -1,5 +1,9 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Container = styled.div`
   ${({theme}) => css` && { background: ${theme.colors.white}; } `}
+`
+
+export const Title = styled.h1`
+  ${({theme}) => css` && { color: ${theme.colors.black}; } `}
 `

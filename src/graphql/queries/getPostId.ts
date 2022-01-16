@@ -12,6 +12,7 @@ const GET_POST_ID = gql`
       cover {
         ...imageData
       }
+      created_at
       title
       text
       slug

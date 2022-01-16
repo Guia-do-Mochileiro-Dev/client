@@ -15,6 +15,10 @@ const GET_AUTHOR_ID = gql`
       }
       role
       description
+      socialLinks {
+        title
+        url
+      }
     }
   }
 `

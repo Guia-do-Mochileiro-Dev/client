@@ -12,6 +12,7 @@ const GET_POSTS = gql`
       cover {
         ...imageData
       }
+      created_at
       title
       text
       slug
