@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import media from 'styled-media-query'
 
 export const Container = styled.div`
   ${({ theme }) =>
@@ -18,6 +19,11 @@ export const Nav = styled.div`
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        ${media.lessThan('medium')`
+          flex-direction: column;
+          row-gap: 2rem;
+        `}
       }
     `}
 `
