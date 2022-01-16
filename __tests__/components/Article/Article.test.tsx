@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react'
 import Theme from 'themes'
-import { MainArticle } from 'components/MainArticle'
+import { Article } from 'components/Article'
 
-describe('<MainArticle />', () => {
-  it('should render MainArticle', () => {
+describe('<Article />', () => {
+  it('should render Article', () => {
     const article = {
       id: 2,
       cover: {
@@ -25,7 +25,7 @@ describe('<MainArticle />', () => {
     }
     render(
       <Theme>
-        <MainArticle
+        <Article
           id={article.id}
           cover={article.cover}
           created_at={article.created_at}

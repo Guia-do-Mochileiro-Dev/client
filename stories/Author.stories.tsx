@@ -1,4 +1,4 @@
-import { Author } from '../src/components/Author'
+import { Author } from 'components/Author'
 import { Meta, Story } from '@storybook/react/types-6-0'
 
 export default {
