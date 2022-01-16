@@ -4,7 +4,6 @@ module.exports = {
   collectCoverage: true,
   collectCoverageFrom: ['src/**/*.ts(x)?', '!stories/*.stories.tsx'],
   setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
-  testMatch: [
-    "**/__tests__/**/?(*.)+(spec|test).[tj]s?(x)",
-  ],
+  testMatch: ['**/__tests__/**/?(*.)+(spec|test).[tj]s?(x)'],
+  moduleDirectories: ['node_modules', 'src']
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { GlobalStyles } from '../src/styles/global'
+import Theme from 'themes'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -13,9 +13,8 @@ export const parameters = {
 
 export const decorators = [
   (Story) => (
-    <>
-      <GlobalStyles />
+    <Theme>
       <Story />
-    </>
+    </Theme>
   )
 ]
