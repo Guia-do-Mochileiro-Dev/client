@@ -2,6 +2,7 @@ import Link from 'next/link'
 import * as S from './styles'
 import { Author } from 'components/Author'
 import { PostProps } from 'types/api'
+import { getImageUrl } from 'utils/getImageUrl'
 
 export const Article = ({
   id,
@@ -14,12 +15,12 @@ export const Article = ({
 }: PostProps) => {
   const date = new Date(created_at)
   const dateFormat = date.toLocaleString('pt-br')
-
+  console.log(text)
   return (
     <Link href={`/article/${slug}`}>
       <S.Container aria-label="main article" id={id}>
         <S.Cover
-          src={cover.url}
+          src={getImageUrl(cover.url)}
           alternativeText={cover.alternativeText}
           loading="lazy"
         />

@@ -1,12 +1,18 @@
-import { Main } from 'components/Main'
+import { GetStaticProps } from 'next'
 
-const Home = () => {
-  return (
-    <Main
-      title="Guia do Mochileiro Dev"
-      description="Projeto desenvolvido de devs para devs. Nosso intuito é te ajudar a resolver os problemas aos quais nós já passamos e conseguimos resolver :D"
-    />
-  )
+import client from 'graphql/client'
+import GET_POSTS from 'graphql/queries/getPosts'
+
+import { HomeTemplate } from 'templates/Home'
+import { PostsProps } from 'types/api'
+
+const Home = ({ postPages }: PostsProps) => (
+  <HomeTemplate postPages={postPages} />
+)
+
+export const getStaticProps: GetStaticProps = async () => {
+  const { postPages } = await client.request(GET_POSTS)
+
+  return { revalidate: 60, props: { postPages } }
 }
-
 export default Home

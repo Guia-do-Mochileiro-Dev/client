@@ -3,6 +3,9 @@ import Head from 'next/head'
 
 import Theme from 'themes'
 
+import { Footer } from 'components/Footer'
+import { Header } from 'components/Header'
+
 function App({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -16,7 +19,9 @@ function App({ Component, pageProps }: AppProps) {
             content="Projeto desenvolvido de devs para devs. Nosso intuito é te ajudar a resolver os problemas aos quais nós já passamos e conseguimos resolver :D"
           />
         </Head>
+        <Header />
         <Component {...pageProps} />
+        <Footer />
       </Theme>
     </>
   )

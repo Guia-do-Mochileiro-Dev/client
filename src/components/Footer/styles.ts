@@ -10,6 +10,8 @@ export const Container = styled.div`
         align-items: center;
         justify-content: center;
         padding: 4rem;
+        padding-top: 14rem;
+        z-index: 0;
       }
     `}
 `
@@ -42,6 +44,19 @@ export const Page = styled.h1`
             color: ${theme.colors.green};
           }
         }
+      }
+    `}
+`
+
+export const Phrases = styled.div`
+  ${({ theme }) =>
+    css`
+      && {
+        max-width: ${theme.grid.container};
+        margin: 0 auto;
+        margin-bottom: -7.5rem;
+        position: relative;
+        z-index: 99;
       }
     `}
 `

@@ -13,7 +13,7 @@ export const Photo = styled.img`
         height: 47px;
         border-radius: 60px;
         color: ${theme.colors.black};
-        object-fit: fill;
+        object-fit: cover;
       }
     `}
 `
