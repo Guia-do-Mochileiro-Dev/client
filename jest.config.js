@@ -9,7 +9,11 @@ module.exports = {
     '!src/graphql/**/*.ts',
     '!src/api/*.ts',
     '!src/styles/**/*.ts',
-    '!src/**/mock.ts'
+    '!src/**/mock.ts',
+    '!src/pages/_document.tsx',
+    '!src/pages/_app.tsx',
+    '!src/components/**/index.tsx',
+    '!src/components/**/types.ts'
   ],
   setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
   testMatch: ['**/__tests__/**/?(*.)+(spec|test).[tj]s?(x)'],
