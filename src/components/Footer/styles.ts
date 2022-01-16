@@ -9,6 +9,7 @@ export const Container = styled.div`
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        padding: 4rem;
       }
     `}
 `
@@ -29,7 +30,7 @@ export const Page = styled.h1`
   ${({ theme }) =>
     css`
       && {
-        padding-bottom: 4rem;
+        padding-top: 4rem;
         a {
           color: ${theme.colors.white};
           font-weight: ${theme.font.bold};
