@@ -4,7 +4,7 @@ import { Author } from 'components/Author'
 
 describe('<Author />', () => {
   it('should render Author', () => {
-    const name = 'Letícia Alexadre'
+    const name = 'Letícia Alexandre'
     const photo = {
       url: 'https://avatars.githubusercontent.com/u/56488480?v=4',
       alternativeText: 'Letícia Alexandre'
