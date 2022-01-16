@@ -20,6 +20,7 @@ export const Photo = styled.img`
   width: 162px;
   height: 154px;
   border-radius: 50%;
+  object-fit: cover;
 `
 
 export const Name = styled.div`
@@ -67,13 +68,15 @@ export const SocialMidiaItem = styled.a`
       height: 34px;
       border: 1px solid ${theme.colors.blueDark};
       border-radius: 5px;
-
       padding: 4px;
+      transition: background-color 0.3s ease-in-out;
+
+      &:hover {
+        cursor: pointer;
+        background: ${theme.colors.green};
+        border: ${theme.colors.white};
+      }
     }
-    :hover {
-      cursor: pointer;
-      background: ${theme.colors.green};
-      border: ${theme.colors.white};
   `}
 `
 

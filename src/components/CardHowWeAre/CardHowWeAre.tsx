@@ -1,17 +1,10 @@
 import { AuthorProps } from 'types/api'
 import * as S from './styles'
 
-const Midia = (title: string) => {
-  switch (title) {
-    case 'github':
-      return <S.GithubIcon />
-    case 'linkedin':
-      return <S.LinkedinIcon />
-    case 'instagram':
-      return <S.InstagramIcon />
-    default:
-      return 'default'
-  }
+const Midia = {
+  github: <S.GithubIcon />,
+  linkedin: <S.LinkedinIcon />,
+  instagram: <S.InstagramIcon />
 }
 
 export const CardHowWeAre = ({
@@ -34,7 +27,7 @@ export const CardHowWeAre = ({
         {socialLinks?.map(({ url, title }) => {
           return (
             <S.SocialMidiaItem key={url} href={url} target="_blank">
-              {Midia(title)}
+              {Midia[title]}
             </S.SocialMidiaItem>
           )
         })}
