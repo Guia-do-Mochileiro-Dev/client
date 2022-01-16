@@ -1,13 +1,8 @@
 import styled, { css } from 'styled-components'
 
 export const Container = styled.div`
-  ${({ theme }) =>
-    css`
-      && {
-        display: flex;
-        align-items: center;
-      }
-    `}
+  display: flex;
+  align-items: center;
 `
 
 export const Photo = styled.img`

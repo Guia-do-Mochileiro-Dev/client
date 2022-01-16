@@ -16,6 +16,12 @@ const GET_POST_ID = gql`
       title
       text
       slug
+      author {
+        name
+        photo {
+          ...imageData
+        }
+      }
     }
   }
 `
