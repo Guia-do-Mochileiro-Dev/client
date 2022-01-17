@@ -3,7 +3,7 @@ import * as S from './styles'
 import { BreadcrumbProps } from './types'
 
 export const Breadcrumb = ({ slug }: BreadcrumbProps) => {
-  const slugFormat = slug.substr(0, 20)
+  const slugFormat = slug.length > 20 ? slug.slice(0, 20).concat('...') : slug
 
   return (
     <S.Container>
@@ -11,7 +11,7 @@ export const Breadcrumb = ({ slug }: BreadcrumbProps) => {
         <Link href="/">Home</Link>
       </S.Link>
       <S.Link>{'>'}</S.Link>
-      <S.Link>{slugFormat}...</S.Link>
+      <S.Link>{slugFormat}</S.Link>
     </S.Container>
   )
 }
