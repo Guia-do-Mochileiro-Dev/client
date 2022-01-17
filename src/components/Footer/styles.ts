@@ -24,6 +24,7 @@ export const Logo = styled.img`
         width: 25rem;
         width: 18rem;
         object-fit: cover;
+        cursor: pointer;
       }
     `}
 `

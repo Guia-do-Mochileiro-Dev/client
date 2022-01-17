@@ -3,6 +3,7 @@ import * as S from './styles'
 import { Author } from 'components/Author'
 import { PostProps } from 'types/api'
 import { getImageUrl } from 'utils/getImageUrl'
+import { formatDate } from 'utils/formatDate'
 
 export const Article = ({
   id,
@@ -13,9 +14,6 @@ export const Article = ({
   slug,
   author
 }: PostProps) => {
-  const date = new Date(created_at)
-  const dateFormat = date.toLocaleString('pt-br')
-  console.log(text)
   return (
     <Link href={`/article/${slug}`}>
       <S.Container aria-label="main article" id={id}>
@@ -25,7 +23,7 @@ export const Article = ({
           loading="lazy"
         />
         <S.Details>
-          <S.Date>{dateFormat}</S.Date>
+          <S.Date>{formatDate(created_at)}</S.Date>
           <S.Title>{title}</S.Title>
           <S.Text dangerouslySetInnerHTML={{ __html: text }} />
           <Author name={author.name} photo={author.photo} />
