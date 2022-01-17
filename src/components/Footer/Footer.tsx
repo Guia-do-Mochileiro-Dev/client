@@ -16,10 +16,12 @@ export const Footer = () => {
         <JokePhrases {...mock} />
       </S.Phrases>
       <S.Container>
-        <S.Logo
-          src="/img/logo-branca.svg"
-          alternativeText="Guia do Mochileiro Dev"
-        />
+        <Link href="/">
+          <S.Logo
+            src="/img/logo-branca.svg"
+            alternativeText="Guia do Mochileiro Dev"
+          />
+        </Link>
         <S.Page>
           <Link href="/about-us">Quem Somos</Link>
         </S.Page>

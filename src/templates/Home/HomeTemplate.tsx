@@ -1,4 +1,3 @@
-import React from 'react'
 import { NextSeo } from 'next-seo'
 import { PostsProps, PostProps } from 'types/api'
 
@@ -36,7 +35,7 @@ export const HomeTemplate = ({ postPages }: PostsProps) => {
         }}
       />
       <S.Container>
-        {!!posts.length && (
+        {!!posts && (
           <>
             <MainArticle {...lastedPost} />
 
@@ -47,6 +46,8 @@ export const HomeTemplate = ({ postPages }: PostsProps) => {
             </S.Posts>
           </>
         )}
+        {/* TODO - COMPONENTE DE POST NAO ENCONTRADO */}
+        {!posts && <S.NotFound>Nenhum post encontrado!</S.NotFound>}
       </S.Container>
     </>
   )
