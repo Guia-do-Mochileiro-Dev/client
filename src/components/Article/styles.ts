@@ -10,6 +10,7 @@ export const Container = styled.div`
         box-shadow: 0px -4px 39px #00000029;
         border-radius: ${theme.border.radius};
         transition: box-shadow 0.3s ease-in-out;
+        max-width: 36rem;
 
         &:hover {
           box-shadow: 0px -4px 39px 2px #00000045;

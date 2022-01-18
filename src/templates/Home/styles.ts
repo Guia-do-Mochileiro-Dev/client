@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import media from 'styled-media-query'
 
 export const Container = styled.div`
   ${({ theme }) =>
@@ -17,6 +18,9 @@ export const Posts = styled.div`
   flex-wrap: wrap;
   gap: 4rem;
   justify-content: space-between;
+  ${media.lessThan('large')`
+            justify-content: center;
+        `}
 `
 export const NotFound = styled.h1`
   ${({ theme }) =>

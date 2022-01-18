@@ -14,18 +14,24 @@ export const MainArticle = ({
   slug,
   author
 }: PostProps) => {
+  const titleFormat =
+    title.length > 70 ? title.slice(0, 70).concat('...') : title
+
+  const descriptionFormat =
+    text.length > 565 ? text.slice(0, 565).concat('...') : text
+  console.log(text)
   return (
     <Link href={`/article/${slug}`}>
       <S.Container aria-label="main article" id={id}>
         <S.Cover
           src={getImageUrl(cover.url)}
-          alternativeText={cover.alternativeText}
+          alt={cover.alternativeText}
           loading="lazy"
         />
         <S.Details>
           <S.Date>{formatDate(created_at)}</S.Date>
-          <S.Title>{title}</S.Title>
-          <S.Text dangerouslySetInnerHTML={{ __html: text }} />
+          <S.Title>{titleFormat}</S.Title>
+          <S.Text dangerouslySetInnerHTML={{ __html: descriptionFormat }} />
           <Author name={author.name} photo={author.photo} />
         </S.Details>
       </S.Container>
