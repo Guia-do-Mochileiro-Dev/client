@@ -20,6 +20,7 @@ export const Footer = () => {
           <S.Logo
             src="/img/logo-branca.svg"
             alternativeText="Guia do Mochileiro Dev"
+            loading="lazy"
           />
         </Link>
         <S.Page>

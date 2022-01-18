@@ -4,17 +4,21 @@ import styled, { css } from 'styled-components'
 import { Instagram } from 'styled-icons/boxicons-logos'
 
 export const Container = styled.div`
-  width: 223px;
-  height: 378px;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-  margin: auto 0;
-  border-radius: 10px;
-  padding: 18px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
+  ${({ theme }) => css`
+    && {
+      width: 223px;
+      height: 378px;
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+      margin: auto 0;
+      border-radius: ${theme.border.radius};
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+  `}
 `
 export const Photo = styled.img`
   width: 162px;
@@ -27,7 +31,7 @@ export const Name = styled.div`
   ${({ theme }) => css`
     && {
       font-family: ${theme.font.family};
-      font-size: ${theme.font.sizes.large};
+      font-size: ${theme.font.sizes.xlarge};
       font-weight: ${theme.font.bold};
       color: ${theme.colors.blueDark};
     }
@@ -36,8 +40,7 @@ export const Name = styled.div`
 export const Role = styled.div`
   ${({ theme }) => css`
     && {
-      font-family: ${theme.font.family};
-      font-size: 1rem;
+      font-size: ${theme.font.sizes.small};
       font-weight: ${theme.font.bold};
       color: ${theme.colors.blueDark};
     }
@@ -47,7 +50,7 @@ export const Description = styled.div`
   ${({ theme }) => css`
     && {
       font-family: ${theme.font.family};
-      font-size: 1.1rem;
+      font-size: ${theme.font.sizes.medium};
       font-weight: ${theme.font.light};
       color: ${theme.colors.blueDark};
       text-align: center;
@@ -67,7 +70,7 @@ export const SocialMidiaItem = styled.a`
       width: 34px;
       height: 34px;
       border: 1px solid ${theme.colors.blueDark};
-      border-radius: 5px;
+      border-radius: ${theme.border.radius};
       padding: 4px;
       transition: background-color 0.3s ease-in-out;
 

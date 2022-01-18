@@ -1,5 +1,6 @@
 import { AuthorProps } from 'types/api'
 import * as S from './styles'
+import { getImageUrl } from 'utils/getImageUrl'
 
 const Midia = {
   github: <S.GithubIcon />,
@@ -17,7 +18,11 @@ export const CardHowWeAre = ({
 }: AuthorProps) => {
   return (
     <S.Container id={id}>
-      <S.Photo src={photo?.url} alt={photo?.alternativeText} />
+      <S.Photo
+        src={getImageUrl(photo?.url)}
+        alt={photo?.alternativeText}
+        loading="lazy"
+      />
 
       <S.Name>{name} </S.Name>
       <S.Role>{role}</S.Role>
