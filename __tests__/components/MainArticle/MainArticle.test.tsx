@@ -23,6 +23,7 @@ describe('<MainArticle />', () => {
         }
       }
     }
+
     render(
       <Theme>
         <MainArticle
@@ -37,6 +38,8 @@ describe('<MainArticle />', () => {
       </Theme>
     )
 
-    expect(screen.getByText(article.title)).toBeInTheDocument()
+    expect(
+      screen.getByText(/There once was a ship that put/i)
+    ).toBeInTheDocument()
   })
 })

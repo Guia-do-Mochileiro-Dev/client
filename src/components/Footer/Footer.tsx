@@ -19,7 +19,7 @@ export const Footer = () => {
         <Link href="/">
           <S.Logo
             src="/img/logo-branca.svg"
-            alternativeText="Guia do Mochileiro Dev"
+            alt="Guia do Mochileiro Dev"
             loading="lazy"
           />
         </Link>
