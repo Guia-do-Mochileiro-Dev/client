@@ -7,7 +7,11 @@ export const Header = () => {
     <S.Container>
       <S.Nav>
         <Link href="/">
-          <S.Logo src="/img/logo-branca.svg" alt="Guia do Mochileiro Dev" />
+          <S.Logo
+            src="/img/logo-branca.svg"
+            alt="Guia do Mochileiro Dev"
+            loading="lazy"
+          />
         </Link>
         <Searchbar />
       </S.Nav>

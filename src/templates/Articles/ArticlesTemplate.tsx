@@ -16,7 +16,11 @@ export const ArticlesTemplate = ({
   return (
     <S.Container>
       <Breadcrumb slug={slug} />
-      <S.Cover src={getImageUrl(cover.url)} alt={cover.alternativeText} />
+      <S.Cover
+        src={getImageUrl(cover.url)}
+        alt={cover.alternativeText}
+        loading="lazy"
+      />
       <S.Date>{formatDate(created_at)}</S.Date>
       <S.Title>{title}</S.Title>
       <S.Text dangerouslySetInnerHTML={{ __html: text }} />

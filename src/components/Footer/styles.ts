@@ -58,6 +58,7 @@ export const Phrases = styled.div`
         margin-bottom: -7.5rem;
         position: relative;
         z-index: 99;
+        padding: 0 1rem;
       }
     `}
 `
