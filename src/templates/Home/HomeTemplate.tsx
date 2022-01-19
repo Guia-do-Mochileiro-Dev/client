@@ -5,12 +5,15 @@ import * as S from './styles'
 
 import { MainArticle } from 'components/MainArticle'
 import { Article } from 'components/Article'
+import MediaMatch from 'components/MediaMatch'
 
 export const HomeTemplate = ({ postPages }: PostsProps) => {
-  const lastedPost = postPages[postPages.length - 1]
-  const posts = JSON.parse(JSON.stringify(postPages)) as PostsProps
-  posts.pop()
-  posts.reverse()
+  const lastedPost = !!postPages && postPages[postPages.length - 1]
+  const posts =
+    !!postPages && (JSON.parse(JSON.stringify(postPages)) as PostsProps)
+
+  !!postPages && posts.pop()
+  !!postPages && posts.reverse()
 
   return (
     <>
@@ -37,9 +40,14 @@ export const HomeTemplate = ({ postPages }: PostsProps) => {
       <S.Container>
         {!!posts && (
           <>
-            <MainArticle {...lastedPost} />
+            <MediaMatch greaterThan="medium">
+              <MainArticle {...lastedPost} />
+            </MediaMatch>
 
             <S.Posts>
+              <MediaMatch lessThan="medium">
+                <Article {...lastedPost} />
+              </MediaMatch>
               {posts.map((post: PostProps) => (
                 <Article key={post.id} {...post} />
               ))}
