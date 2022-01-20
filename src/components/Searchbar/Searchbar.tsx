@@ -1,13 +1,13 @@
 import * as S from './styles'
-import { SearchbarProps } from './types'
-
-export const Searchbar = ({ value, handleChange }: SearchbarProps) => {
+//import { SearchbarProps } from './types'
+// { value, handleChange }: SearchbarProps
+export const Searchbar = () => {
   return (
     <S.Container>
       <S.InputSearch
         type="text"
-        value={value}
-        onChange={handleChange}
+        // value={value}
+        // onChange={handleChange}
         placeholder="Pesquisar..."
         aria-label="search"
       />

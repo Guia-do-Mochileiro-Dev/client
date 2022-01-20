@@ -11,7 +11,6 @@ export const AboutUsTemplate = ({ authors }: AuthorsProps) => {
         {authors?.map((author) => (
           <CardHowWeAre
             key={author.id}
-            id={author.id}
             name={author.name}
             photo={author.photo}
             role={author.role}

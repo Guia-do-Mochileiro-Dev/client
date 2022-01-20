@@ -1,1 +1,1 @@
-export { ArticleTemplate } from './ArticleTemplate'
+export { ArticlesTemplate } from './ArticlesTemplate'

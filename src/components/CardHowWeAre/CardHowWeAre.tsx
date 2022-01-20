@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { AuthorProps } from 'types/api'
 import * as S from './styles'
 import { getImageUrl } from 'utils/getImageUrl'
@@ -9,15 +10,14 @@ const Midia = {
 }
 
 export const CardHowWeAre = ({
-  id,
   name,
   photo,
   role,
   description,
   socialLinks
-}: AuthorProps) => {
+}: Omit<AuthorProps, 'id'>) => {
   return (
-    <S.Container id={id}>
+    <S.Container>
       <S.Photo
         src={getImageUrl(photo?.url)}
         alt={photo?.alternativeText}
@@ -32,7 +32,7 @@ export const CardHowWeAre = ({
         {socialLinks?.map(({ url, title }) => {
           return (
             <S.SocialMidiaItem key={url} href={url} target="_blank">
-              {Midia[title]}
+              {(Midia as any)[title]}
             </S.SocialMidiaItem>
           )
         })}

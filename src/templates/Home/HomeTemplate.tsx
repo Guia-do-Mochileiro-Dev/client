@@ -9,8 +9,7 @@ import MediaMatch from 'components/MediaMatch'
 
 export const HomeTemplate = ({ postPages }: PostsProps) => {
   const lastedPost = !!postPages && postPages[postPages.length - 1]
-  const posts =
-    !!postPages && (JSON.parse(JSON.stringify(postPages)) as PostsProps)
+  const posts = !!postPages && (JSON.parse(JSON.stringify(postPages)) as any)
 
   !!postPages && posts.pop()
   !!postPages && posts.reverse()

@@ -6,14 +6,13 @@ import { getImageUrl } from 'utils/getImageUrl'
 import { formatDate } from 'utils/formatDate'
 
 export const Article = ({
-  id,
   cover,
   created_at,
   title,
   text,
   slug,
   author
-}: PostProps) => {
+}: Omit<PostProps, 'id'>) => {
   const titleFormat =
     title.length > 50 ? title.slice(0, 50).concat('...') : title
 
@@ -22,7 +21,7 @@ export const Article = ({
 
   return (
     <Link href={`/article/${slug}`}>
-      <S.Container aria-label="main article" id={id}>
+      <S.Container aria-label="main article">
         <S.Cover
           src={getImageUrl(cover.url)}
           alt={cover.alternativeText}

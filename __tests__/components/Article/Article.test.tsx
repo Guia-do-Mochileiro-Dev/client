@@ -5,7 +5,6 @@ import { Article } from 'components/Article'
 describe('<Article />', () => {
   it('should render Article', () => {
     const article = {
-      id: 2,
       cover: {
         alternativeText: '',
         url: 'http://localhost:1337/uploads/cover_5074a4bf56.png'
@@ -27,7 +26,6 @@ describe('<Article />', () => {
     render(
       <Theme>
         <Article
-          id={article.id}
           cover={article.cover}
           created_at={article.created_at}
           title={article.title}

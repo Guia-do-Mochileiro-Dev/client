@@ -6,17 +6,8 @@ export default {
   component: Article
 } as Meta
 
-const Template: Story = ({
-  cover,
-  created_at,
-  title,
-  text,
-  slug,
-  author,
-  id
-}) => (
+const Template: Story = ({ cover, created_at, title, text, slug, author }) => (
   <Article
-    id={id}
     cover={cover}
     created_at={created_at}
     title={title}
@@ -28,7 +19,6 @@ const Template: Story = ({
 
 export const Default = Template.bind({})
 Default.args = {
-  id: '2',
   cover: {
     alternativeText: '',
     url: 'http://localhost:1337/uploads/cover_5074a4bf56.png'

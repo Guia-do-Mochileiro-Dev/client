@@ -1,6 +1,6 @@
 import { GetStaticProps } from 'next'
 import { useRouter } from 'next/dist/client/router'
-import { ArticlesTemplate } from 'templates/Articles/ArticlesTemplate'
+import { ArticlesTemplate } from 'templates/Articles'
 import { PostProps } from 'types/api'
 import client from 'graphql/client'
 import GET_POSTS from 'graphql/queries/getPosts'

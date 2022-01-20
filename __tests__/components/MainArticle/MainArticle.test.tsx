@@ -5,7 +5,6 @@ import { MainArticle } from 'components/MainArticle'
 describe('<MainArticle />', () => {
   it('should render MainArticle', () => {
     const article = {
-      id: 2,
       cover: {
         alternativeText: '',
         url: 'http://localhost:1337/uploads/cover_5074a4bf56.png'
@@ -27,7 +26,6 @@ describe('<MainArticle />', () => {
     render(
       <Theme>
         <MainArticle
-          id={article.id}
           cover={article.cover}
           created_at={article.created_at}
           title={article.title}
