@@ -19,7 +19,7 @@ export const Article = ({
 
   const descriptionFormat =
     text.length > 165 ? text.slice(0, 165).concat('...') : text
-  console.log(text)
+
   return (
     <Link href={`/article/${slug}`}>
       <S.Container aria-label="main article" id={id}>

@@ -5,6 +5,7 @@ import Theme from 'themes'
 
 import { Footer } from 'components/Footer'
 import { Header } from 'components/Header'
+import { JokePhrasesContextProvider } from 'hooks/useJokePhrases'
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -21,7 +22,9 @@ function App({ Component, pageProps }: AppProps) {
         </Head>
         <Header />
         <Component {...pageProps} />
-        <Footer />
+        <JokePhrasesContextProvider>
+          <Footer />
+        </JokePhrasesContextProvider>
       </Theme>
     </>
   )

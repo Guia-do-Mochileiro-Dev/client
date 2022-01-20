@@ -1,19 +1,21 @@
 import Link from 'next/link'
 import { JokePhrases } from 'components/JokePhrases'
 import * as S from './styles'
+import { useJokePhrases } from 'hooks/useJokePhrases'
 
 export const Footer = () => {
-  const mock = {
-    phrase:
-      'Se até as variáveis precisam ser declaradas porque não me declarar pra você?',
-    author: 'Hebert Barros',
-    nextPhrase: () => {},
-    previousPhrase: () => {}
+  const { phrase, author, nextPhrase, previousPhrase } = useJokePhrases()
+  const jokePhrases = {
+    phrase,
+    author,
+    nextPhrase,
+    previousPhrase
   }
+
   return (
     <>
       <S.Phrases>
-        <JokePhrases {...mock} />
+        <JokePhrases {...jokePhrases} />
       </S.Phrases>
       <S.Container>
         <Link href="/">

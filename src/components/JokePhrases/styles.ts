@@ -73,6 +73,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 73rem;
 `
 
 export const Phrase = styled.h1`
