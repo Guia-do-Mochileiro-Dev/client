@@ -8,8 +8,7 @@ export const Container = styled.div`
     && {
       width: 223px;
       height: 378px;
-      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-        rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+      box-shadow: 0px -4px 39px #00000029;
       margin: auto 0;
       border-radius: ${theme.border.radius};
       padding: 18px;
@@ -17,6 +16,11 @@ export const Container = styled.div`
       flex-direction: column;
       justify-content: space-evenly;
       align-items: center;
+      transition: box-shadow 0.3s ease-in-out;
+
+      &:hover {
+        box-shadow: 0px -4px 39px 2px #00000045;
+      }
     }
   `}
 `
