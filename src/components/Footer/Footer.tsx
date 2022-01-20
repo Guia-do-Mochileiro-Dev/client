@@ -1,36 +1,13 @@
 import Link from 'next/link'
 import { JokePhrases } from 'components/JokePhrases'
 import * as S from './styles'
-import { useEffect, useState } from 'react'
-import { jokes } from 'components/JokePhrases/jokes'
-
-interface IJoke {
-  id: number
-  phrase: string
-  author: string
-}
+import { useJokePhrases } from 'hooks/useJokePhrases'
 
 export const Footer = () => {
-  const [joke, setJoke] = useState<IJoke[]>([])
-  const [currentJoke, setCurrentJoke] = useState<IJoke>(jokes[0])
-
-  useEffect(() => {
-    setJoke(jokes)
-  }, [])
-
-  const nextPhrase = () => {
-    const next = currentJoke.id >= joke.length ? 0 : currentJoke.id
-    setCurrentJoke(joke[next])
-  }
-
-  const previousPhrase = () => {
-    const previous = currentJoke.id === 1 ? joke.length - 1 : currentJoke.id - 2
-    setCurrentJoke(joke[previous])
-  }
-
+  const { phrase, author, nextPhrase, previousPhrase } = useJokePhrases()
   const jokePhrases = {
-    phrase: currentJoke?.phrase,
-    author: currentJoke?.author,
+    phrase,
+    author,
     nextPhrase,
     previousPhrase
   }
