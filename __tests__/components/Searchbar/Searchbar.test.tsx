@@ -4,11 +4,9 @@ import Theme from 'themes'
 
 describe('<Searchbar />', () => {
   it('should render Searchbar', () => {
-    const value = 'Front end'
-    const handleChange = () => {}
     render(
       <Theme>
-        <Searchbar value={value} handleChange={handleChange} />
+        <Searchbar />
       </Theme>
     )
 
