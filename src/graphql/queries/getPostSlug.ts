@@ -7,7 +7,7 @@ const GET_POST_SLUG = gql`
   }
 
   query GET_POST_SLUG($slug: String!) {
-    postPage(where: { slug: $slug }) {
+    postPages(where: { slug: $slug }) {
       id
       cover {
         ...imageData
