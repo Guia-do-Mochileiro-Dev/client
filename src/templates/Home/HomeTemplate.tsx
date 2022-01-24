@@ -1,5 +1,8 @@
+import { useState } from 'react'
 import { NextSeo } from 'next-seo'
 import { PostsProps, PostProps } from 'types/api'
+
+import InfiniteScroll from 'react-infinite-scroll-component'
 
 import * as S from './styles'
 
@@ -14,6 +17,27 @@ export const HomeTemplate = ({ postPages }: PostsProps) => {
   !!postPages && posts.pop()
   !!postPages && posts.reverse()
 
+  const [count, setCount] = useState({
+    prev: 0,
+    next: 10
+  })
+  const [hasMore, setHasMore] = useState(true)
+  const [current, setCurrent] = useState(posts.slice(count.prev, count.next))
+
+  const getMoreData = () => {
+    if (current.length === posts.length) {
+      setHasMore(false)
+      return
+    }
+
+    setCurrent(current.concat(posts.slice(count.prev + 10, count.next + 10)))
+
+    setCount((prevState) => ({
+      prev: prevState.prev + 10,
+      next: prevState.next + 10
+    }))
+  }
+  console.log(current)
   return (
     <>
       <NextSeo
@@ -38,7 +62,11 @@ export const HomeTemplate = ({ postPages }: PostsProps) => {
       />
       <S.Container>
         {!!posts && (
-          <>
+          <InfiniteScroll
+            dataLength={posts.length}
+            next={getMoreData}
+            hasMore={hasMore}
+          >
             <MediaMatch greaterThan="medium">
               <MainArticle {...lastedPost} />
             </MediaMatch>
@@ -47,11 +75,11 @@ export const HomeTemplate = ({ postPages }: PostsProps) => {
               <MediaMatch lessThan="medium">
                 <Article {...lastedPost} />
               </MediaMatch>
-              {posts.map((post: PostProps) => (
+              {current.map((post: PostProps) => (
                 <Article key={post.id} {...post} />
               ))}
             </S.Posts>
-          </>
+          </InfiniteScroll>
         )}
         {/* TODO - COMPONENTE DE POST NAO ENCONTRADO */}
         {!posts && <S.NotFound>Nenhum post encontrado!</S.NotFound>}
