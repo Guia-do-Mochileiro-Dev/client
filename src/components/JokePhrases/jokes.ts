@@ -53,5 +53,10 @@ export const jokes: IJokes = [
     id: 9,
     phrase: 'Minha arte é a programação.',
     author: 'Deidara Programador'
+  },
+  {
+    id: 10,
+    phrase: 'Se você se concentrar em algo, poderá fazer qualquer coisa.',
+    author: 'Madara Uchiha'
   }
 ]
