@@ -1,6 +1,6 @@
 import { gql } from 'graphql-request'
 
-const GET_POST_SLUG = gql`
+const GET_POST_SEARCH = gql`
   fragment imageData on UploadFile {
     alternativeText
     url
@@ -26,4 +26,4 @@ const GET_POST_SLUG = gql`
   }
 `
 
-export default GET_POST_SLUG
+export default GET_POST_SEARCH
