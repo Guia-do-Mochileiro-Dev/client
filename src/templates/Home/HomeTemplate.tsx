@@ -37,7 +37,7 @@ export const HomeTemplate = ({ postPages }: PostsProps) => {
       next: prevState.next + 10
     }))
   }
-  console.log(current)
+
   return (
     <>
       <NextSeo
