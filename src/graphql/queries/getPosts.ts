@@ -7,7 +7,7 @@ const GET_POSTS = gql`
   }
 
   query GET_POSTS {
-    postPages {
+    postPages(sort: "created_at:asc") {
       id
       cover {
         ...imageData
