@@ -1,13 +1,13 @@
 import { gql } from 'graphql-request'
 
-const GET_POST_SLUG = gql`
+const GET_POST_SEARCH = gql`
   fragment imageData on UploadFile {
     alternativeText
     url
   }
 
-  query GET_POST_SLUG($slug: String!) {
-    postPages(where: { slug: $slug }) {
+  query GET_POST_SEARCH($text: String!) {
+    postPages(where: { text_contains: $text }) {
       id
       cover {
         ...imageData
@@ -26,4 +26,4 @@ const GET_POST_SLUG = gql`
   }
 `
 
-export default GET_POST_SLUG
+export default GET_POST_SEARCH
