@@ -7,7 +7,9 @@ const GET_POST_SEARCH = gql`
   }
 
   query GET_POST_SEARCH($text: String!) {
-    postPages(where: { text_contains: $text }) {
+    postPages(
+      where: { _or: [{ text_contains: $text }, { title_contains: $text }] }
+    ) {
       id
       cover {
         ...imageData
