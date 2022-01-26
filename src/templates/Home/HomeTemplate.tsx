@@ -66,6 +66,7 @@ export const HomeTemplate = ({ postPages }: PostsProps) => {
             dataLength={posts.length}
             next={getMoreData}
             hasMore={hasMore}
+            loader={<p>Loading...</p>}
           >
             <MediaMatch greaterThan="medium">
               <MainArticle {...lastedPost} />

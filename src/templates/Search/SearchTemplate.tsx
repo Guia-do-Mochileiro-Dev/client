@@ -14,17 +14,17 @@ export const SearchTemplate = ({ postPages }: PostsProps) => {
   })
   const [hasMore, setHasMore] = useState(true)
   const [current, setCurrent] = useState(
-    postPages.slice(count.prev, count.next)
+    postPages?.slice(count.prev, count.next)
   )
 
   const getMoreData = () => {
-    if (current.length === postPages.length) {
+    if (current?.length === postPages.length) {
       setHasMore(false)
       return
     }
 
     setCurrent(
-      current.concat(postPages.slice(count.prev + 10, count.next + 10))
+      current?.concat(postPages.slice(count.prev + 10, count.next + 10))
     )
 
     setCount((prevState) => ({
@@ -36,15 +36,16 @@ export const SearchTemplate = ({ postPages }: PostsProps) => {
   return (
     <>
       <S.Container>
-        <S.Title>{postPages.length} resultados encontrados</S.Title>
+        <S.Title>{postPages?.length} resultados encontrados</S.Title>
         {!!postPages && (
           <InfiniteScroll
             dataLength={postPages.length}
             next={getMoreData}
             hasMore={hasMore}
+            loader={<p>Loading...</p>}
           >
             <S.Posts>
-              {current.map((post: PostProps) => (
+              {current?.map((post: PostProps) => (
                 <Article key={post.id} {...post} />
               ))}
             </S.Posts>

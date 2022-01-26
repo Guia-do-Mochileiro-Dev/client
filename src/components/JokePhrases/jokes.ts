@@ -4,7 +4,7 @@ interface IJokes {
   author: string
 }
 
-export const jokes: IJokes = [
+export const jokes: IJokes[] = [
   {
     id: 1,
     phrase:

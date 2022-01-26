@@ -1,8 +1,7 @@
 import { GetStaticProps } from 'next'
 
 import client from 'graphql/client'
-import GET_POST_SEARCH from 'graphql/queries/getPostsSearch'
-import GET_POSTS from 'graphql/queries/getPosts'
+import GET_POSTS_SEARCH from 'graphql/queries/getPostsSearch'
 
 import { SearchTemplate } from 'templates/Search'
 import { PostsProps } from 'types/api'
@@ -11,10 +10,12 @@ const Search = ({ postPages }: PostsProps) => (
   <SearchTemplate postPages={postPages} />
 )
 
-export const getStaticProps: GetStaticProps = async () => {
-  //const { postPages } = await client.request(GET_POST_SEARCH)
-  const { postPages } = await client.request(GET_POSTS)
+Search.getInitialProps = async ({ query: { result } }) => {
+  const { postPages } = await client.request(GET_POSTS_SEARCH, {
+    text: result
+  })
 
-  return { revalidate: 60, props: { postPages } }
+  return { postPages }
 }
+
 export default Search
