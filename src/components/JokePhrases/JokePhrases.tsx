@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import * as S from './styles'
 import { JokePhrasesProps } from './types'
 
@@ -7,6 +8,12 @@ export const JokePhrases = ({
   nextPhrase,
   previousPhrase
 }: JokePhrasesProps) => {
+  useEffect(() => {
+    setTimeout(() => {
+      nextPhrase()
+    }, 3000)
+  }, [nextPhrase])
+
   return (
     <S.Container>
       <S.Previous onClick={previousPhrase} />

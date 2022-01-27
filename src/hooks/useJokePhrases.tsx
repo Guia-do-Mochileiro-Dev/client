@@ -1,11 +1,11 @@
+import { jokes } from 'components/JokePhrases/jokes'
 import {
   createContext,
-  useEffect,
-  useState,
+  ReactNode,
   useContext,
-  ReactNode
+  useEffect,
+  useState
 } from 'react'
-import { jokes } from 'components/JokePhrases/jokes'
 
 type Joke = {
   id: number
@@ -32,8 +32,8 @@ export const JokePhrasesContextProvider = ({
   const [joke, setJoke] = useState<Joke[]>([])
   const [currentJoke, setCurrentJoke] = useState<Joke>(jokes[0])
   const [value, setValue] = useState({
-    phrase: jokes[0].phrase,
-    author: jokes[0].author
+    phrase: jokes[0]?.phrase,
+    author: jokes[0]?.author
   })
 
   useEffect(() => {
@@ -42,21 +42,22 @@ export const JokePhrasesContextProvider = ({
   }, [])
 
   const nextPhrase = () => {
-    const next = currentJoke.id >= joke.length ? 0 : currentJoke.id
+    const next = currentJoke?.id >= joke?.length ? 0 : currentJoke?.id
 
     setValue({
-      phrase: joke[next].phrase,
-      author: joke[next].author
+      phrase: joke[next]?.phrase,
+      author: joke[next]?.author
     })
     setCurrentJoke(joke[next])
   }
 
   const previousPhrase = () => {
-    const previous = currentJoke.id === 1 ? joke.length - 1 : currentJoke.id - 2
+    const previous =
+      currentJoke?.id === 1 ? joke?.length - 1 : currentJoke?.id - 2
 
     setValue({
-      phrase: joke[previous].phrase,
-      author: joke[previous].author
+      phrase: joke[previous]?.phrase,
+      author: joke[previous]?.author
     })
     setCurrentJoke(joke[previous])
   }
