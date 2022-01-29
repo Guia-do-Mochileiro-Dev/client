@@ -9,6 +9,10 @@ export const Container = styled.div`
         margin: 6rem auto;
         padding: 0 1rem;
       }
+
+      .infinite-scroll-component {
+        overflow: initial !important;
+      }
     `}
 `
 
@@ -17,7 +21,7 @@ export const Posts = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 4rem;
-  justify-content: space-between;
+  justify-content: flex-start;
   ${media.lessThan('large')`
             justify-content: center;
         `}
