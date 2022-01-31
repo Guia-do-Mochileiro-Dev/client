@@ -51,7 +51,7 @@ export const HomeTemplate = ({ postPages }: PostsProps) => {
             'Projeto desenvolvido de devs para devs. Nosso intuito é te ajudar a resolver os problemas aos quais nós já passamos e conseguimos resolver :D',
           images: [
             {
-              url: 'https://guiadomochileirodev.vercel.app//img/cover.png',
+              url: 'https://guiadomochileirodev.vercel.app/img/cover.png',
               width: 1280,
               height: 720,
               alt: 'Guia do Mochileiro Dev'

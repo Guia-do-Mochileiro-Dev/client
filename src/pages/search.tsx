@@ -9,7 +9,13 @@ interface IResult {
 }
 
 const Search = ({ postPages }: PostsProps) => (
-  <SearchTemplate postPages={postPages} />
+  <>
+    <NextSeo
+      title="Search | Guia do Mochileiro Dev"
+      description="Busque por algum post ou assunto"
+    />
+    <SearchTemplate postPages={postPages} />
+  </>
 )
 
 Search.getInitialProps = async ({ query: { result } }: IResult) => {
