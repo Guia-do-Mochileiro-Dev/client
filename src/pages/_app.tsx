@@ -13,8 +13,8 @@ function App({ Component, pageProps }: AppProps) {
       <Theme>
         <Head>
           <title>Guia do Mochileiro Dev</title>
-          <link rel="apple-touch-icon" href="/img/icon-512.png" />
-          <link rel="shortcut icon" href="/img/icon-512.png" />
+          <link rel="apple-touch-icon" href="/img/logo-branca.svg" />
+          <link rel="shortcut icon" href="/img/logo-branca.svg" />
           <meta
             name="description"
             content="Projeto desenvolvido de devs para devs. Nosso intuito é te ajudar a resolver os problemas aos quais nós já passamos e conseguimos resolver :D"
