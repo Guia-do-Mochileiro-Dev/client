@@ -1,4 +1,5 @@
 import { GetStaticProps } from 'next'
+import { NextSeo } from 'next-seo'
 
 import client from 'graphql/client'
 import GET_AUTHORS from 'graphql/queries/getAuthors'

@@ -1,3 +1,5 @@
+import { NextSeo } from 'next-seo'
+
 import client from 'graphql/client'
 import GET_POSTS_SEARCH from 'graphql/queries/getPostsSearch'
 

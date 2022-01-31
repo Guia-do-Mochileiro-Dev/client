@@ -1,3 +1,5 @@
+import { NextSeo } from 'next-seo'
+
 import { Author } from 'components/Author'
 import { Breadcrumb } from 'components/Breadcrumb'
 import { PostProps } from 'types/api'
