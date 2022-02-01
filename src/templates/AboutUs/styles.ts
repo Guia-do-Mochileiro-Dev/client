@@ -19,3 +19,13 @@ export const AboutUs = styled.div`
   flex-wrap: wrap;
   justify-content: left;
 `
+
+export const NotFound = styled.h1`
+  ${({ theme }) =>
+    css`
+      && {
+        color: ${theme.colors.blueDark};
+        font-size: 3.3rem;
+      }
+    `}
+`

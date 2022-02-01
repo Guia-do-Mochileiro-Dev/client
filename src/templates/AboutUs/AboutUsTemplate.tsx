@@ -18,6 +18,7 @@ export const AboutUsTemplate = ({ authors }: AuthorsProps) => {
             socialLinks={author.socialLinks}
           />
         ))}
+        {!authors && <S.NotFound>Nenhum autor encontrado!</S.NotFound>}
       </S.AboutUs>
     </S.Container>
   )

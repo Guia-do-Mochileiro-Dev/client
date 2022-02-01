@@ -82,7 +82,6 @@ export const HomeTemplate = ({ postPages }: PostsProps) => {
             </S.Posts>
           </InfiniteScroll>
         )}
-        {/* TODO - COMPONENTE DE POST NAO ENCONTRADO */}
         {!posts && <S.NotFound>Nenhum post encontrado!</S.NotFound>}
       </S.Container>
     </>
