@@ -5,8 +5,11 @@ import { PostProps } from 'types/api'
 import client from 'graphql/client'
 import GET_POSTS from 'graphql/queries/getPosts'
 import GET_POST_SLUG from 'graphql/queries/getPostSlug'
+import ReactGA from 'react-ga'
 
 export default function Articles(props: PostProps) {
+  ReactGA.modalview(`/${props.slug}`)
+
   const router = useRouter()
 
   if (router.isFallback) return <p>Carregando...</p>
