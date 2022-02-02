@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+import NextNprogress from 'nextjs-progressbar'
 
 import Theme from 'themes'
 
@@ -20,6 +21,12 @@ function App({ Component, pageProps }: AppProps) {
             content="Projeto desenvolvido de devs para devs. Nosso intuito é te ajudar a resolver os problemas aos quais nós já passamos e conseguimos resolver :D"
           />
         </Head>
+        <NextNprogress
+          color="#D9525E"
+          startPosition={0.3}
+          stopDelayMs={200}
+          height={5}
+        />
         <Header />
         <Component {...pageProps} />
         <JokePhrasesContextProvider>
