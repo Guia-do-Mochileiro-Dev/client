@@ -1,4 +1,4 @@
-import { gql } from 'graphql-request'
+import { gql } from '@apollo/client'
 
 const GET_AUTHOR_ID = gql`
   fragment imageData on UploadFile {

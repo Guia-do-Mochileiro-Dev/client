@@ -23,7 +23,9 @@ const AboutUs = ({ authors }: AuthorsProps) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { authors } = await client.request(GET_AUTHORS)
+  const {
+    data: { authors }
+  } = await client.query({ query: GET_AUTHORS })
 
   return { revalidate: 60, props: { authors } }
 }

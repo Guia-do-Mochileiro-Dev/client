@@ -1,5 +1,8 @@
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+
+import client, { ApiProvider } from 'graphql/client'
+
 import NextNprogress from 'nextjs-progressbar'
 
 import Theme from 'themes'
@@ -10,7 +13,7 @@ import { JokePhrasesContextProvider } from 'hooks/useJokePhrases'
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <ApiProvider client={client}>
       <Theme>
         <Head>
           <title>Guia do Mochileiro Dev</title>
@@ -33,7 +36,7 @@ function App({ Component, pageProps }: AppProps) {
           <Footer />
         </JokePhrasesContextProvider>
       </Theme>
-    </>
+    </ApiProvider>
   )
 }
 

@@ -21,8 +21,13 @@ const Search = ({ postPages }: PostsProps) => (
 )
 
 Search.getInitialProps = async ({ query: { result } }: IResult) => {
-  const { postPages } = await client.request(GET_POSTS_SEARCH, {
-    text: result
+  const {
+    data: { postPages }
+  } = await client.query<PostsProps>({
+    query: GET_POSTS_SEARCH,
+    variables: {
+      text: result
+    }
   })
 
   return { postPages }
