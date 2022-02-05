@@ -14,7 +14,11 @@ const Home = ({ postPages }: PostsProps) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { postPages } = await client.request(GET_POSTS)
+  const {
+    data: { postPages }
+  } = await client.query<PostProps>({
+    query: GET_POSTS
+  })
 
   return { revalidate: 60, props: { postPages } }
 }

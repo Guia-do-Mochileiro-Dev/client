@@ -7,7 +7,7 @@ import GET_POSTS from 'graphql/queries/getPosts'
 import GET_POST_SLUG from 'graphql/queries/getPostSlug'
 import ReactGA from 'react-ga'
 
-export default function Articles(props: PostProps) {
+function Articles(props: PostProps) {
   ReactGA.modalview(`/${props.slug}`)
 
   const router = useRouter()
@@ -18,7 +18,9 @@ export default function Articles(props: PostProps) {
 }
 
 export async function getStaticPaths() {
-  const { postPages } = await client.request(GET_POSTS)
+  const {
+    data: { postPages }
+  } = await client.query({ query: GET_POSTS })
   const paths = postPages?.map((post: PostProps) => ({
     params: { slug: post.slug }
   }))
@@ -27,8 +29,13 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { postPages } = await client.request(GET_POST_SLUG, {
-    slug: params?.slug
+  const {
+    data: { postPages }
+  } = await client.query({
+    query: GET_POST_SLUG,
+    variables: {
+      slug: params?.slug
+    }
   })
 
   if (!postPages) {
@@ -40,3 +47,5 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: postPages[0]
   }
 }
+
+export default Articles

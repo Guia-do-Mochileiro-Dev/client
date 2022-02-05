@@ -1,3 +1,3 @@
 export interface BreadcrumbProps {
-  slug: string
+  title: string
 }

@@ -35,7 +35,7 @@ export const ArticlesTemplate = ({
         }}
       />
       <S.Container>
-        <Breadcrumb slug={slug} />
+        <Breadcrumb title={title} />
         <S.Cover
           src={getImageUrl(cover.url)}
           alt={cover.alternativeText}

@@ -1,4 +1,4 @@
-import { gql } from 'graphql-request'
+import { gql } from '@apollo/client'
 
 const GET_POST_SLUG = gql`
   fragment imageData on UploadFile {
