@@ -6,7 +6,7 @@ import * as S from './styles'
 export const AboutUsTemplate = ({ authors }: AuthorsProps) => {
   return (
     <S.Container>
-      <Breadcrumb slug="Quem somos" />
+      <Breadcrumb title="Quem somos" />
       <S.AboutUs>
         {authors?.map((author) => (
           <CardHowWeAre

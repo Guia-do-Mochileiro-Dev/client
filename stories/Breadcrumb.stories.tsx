@@ -6,9 +6,10 @@ export default {
   component: Breadcrumb
 } as Meta
 
-const Template: Story = ({ slug }) => <Breadcrumb slug={slug} />
+const Template: Story = ({ title }) => <Breadcrumb title={title} />
 
 export const Default = Template.bind({})
 Default.args = {
-  slug: 'There once was a ship that put to sea the name of the ship was the Billy of Tea the winds blew up'
+  title:
+    'There once was a ship that put to sea the name of the ship was the Billy of Tea the winds blew up'
 }
