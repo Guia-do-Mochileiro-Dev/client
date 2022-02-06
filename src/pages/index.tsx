@@ -16,7 +16,7 @@ const Home = ({ postPages }: PostsProps) => {
 export const getStaticProps: GetStaticProps = async () => {
   const {
     data: { postPages }
-  } = await client.query<PostProps>({
+  } = await client.query<PostsProps>({
     query: GET_POSTS
   })
 

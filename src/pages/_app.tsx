@@ -13,7 +13,7 @@ import { JokePhrasesContextProvider } from 'hooks/useJokePhrases'
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    <ApiProvider client={client}>
+    <ApiProvider>
       <Theme>
         <Head>
           <title>Guia do Mochileiro Dev</title>
