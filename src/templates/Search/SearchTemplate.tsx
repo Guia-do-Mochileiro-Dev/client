@@ -16,10 +16,8 @@ export const SearchTemplate = ({ postPages }: PostsProps) => {
   const [current, setCurrent] = useState(
     postPages?.slice(count.prev, count.next)
   )
-  console.log(current.length)
-  console.log(postPages?.length)
+
   const getMoreData = () => {
-    console.log(`bbbb`)
     if (current.length == postPages.length) {
       console.log(`aaaaa`)
       setHasMore(false)
@@ -40,7 +38,7 @@ export const SearchTemplate = ({ postPages }: PostsProps) => {
     <>
       <S.Container>
         <S.Title>{postPages?.length} resultados encontrados</S.Title>
-        {!!postPages && (
+        {postPages?.length > 0 && (
           <InfiniteScroll
             dataLength={current.length}
             next={getMoreData}
