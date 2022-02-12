@@ -11,15 +11,17 @@ export const Container = styled.div`
     `}
 `
 
-export const Cover = styled.img`
+export const Cover = styled.div`
   ${({ theme }) =>
     css`
       && {
-        border-radius: ${theme.border.radius};
+        position: relative;
         margin: 4rem 0 1rem;
         width: 100%;
         height: 40rem;
-        object-fit: cover;
+        img {
+          border-radius: ${theme.border.radius};
+        }
       }
     `}
 `
@@ -46,7 +48,7 @@ export const Title = styled.h1`
     `}
 `
 
-export const Text = styled.p`
+export const Text = styled.div`
   ${({ theme }) =>
     css`
       && {

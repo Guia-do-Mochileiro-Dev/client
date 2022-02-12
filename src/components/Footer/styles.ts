@@ -16,15 +16,15 @@ export const Container = styled.div`
     `}
 `
 
-export const Logo = styled.img`
+export const Logo = styled.div`
   ${({ theme }) =>
     css`
       && {
         color: ${theme.colors.black};
-        width: 25rem;
-        width: 18rem;
-        object-fit: cover;
+        width: 15rem;
+        height: 10rem;
         cursor: pointer;
+        position: relative;
       }
     `}
 `

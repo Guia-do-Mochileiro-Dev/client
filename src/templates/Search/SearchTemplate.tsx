@@ -18,13 +18,14 @@ export const SearchTemplate = ({ postPages }: PostsProps) => {
   )
 
   const getMoreData = () => {
-    if (current?.length === postPages.length) {
+    if (current.length == postPages.length) {
+      console.log(`aaaaa`)
       setHasMore(false)
       return
     }
 
     setCurrent(
-      current?.concat(postPages.slice(count.prev + 10, count.next + 10))
+      current.concat(postPages?.slice(count.prev + 10, count.next + 10))
     )
 
     setCount((prevState) => ({
@@ -37,9 +38,9 @@ export const SearchTemplate = ({ postPages }: PostsProps) => {
     <>
       <S.Container>
         <S.Title>{postPages?.length} resultados encontrados</S.Title>
-        {!!postPages && (
+        {postPages?.length > 0 && (
           <InfiniteScroll
-            dataLength={postPages.length}
+            dataLength={current.length}
             next={getMoreData}
             hasMore={hasMore}
             loader={<p>Loading...</p>}

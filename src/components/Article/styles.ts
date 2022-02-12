@@ -9,6 +9,7 @@ export const Container = styled.div`
         cursor: pointer;
         box-shadow: 0px -4px 39px #00000029;
         border-radius: ${theme.border.radius};
+        width: 100%;
         max-width: 36rem;
         transition: box-shadow 0.3s ease-in-out;
 
@@ -19,15 +20,17 @@ export const Container = styled.div`
     `}
 `
 
-export const Cover = styled.img`
+export const Cover = styled.div`
   ${({ theme }) =>
     css`
       && {
-        border-top-left-radius: ${theme.border.radius};
-        border-top-right-radius: ${theme.border.radius};
+        position: relative;
         width: 100%;
         height: 19rem;
-        object-fit: cover;
+        img {
+          border-top-left-radius: ${theme.border.radius};
+          border-top-right-radius: ${theme.border.radius};
+        }
       }
     `}
 `
@@ -66,7 +69,7 @@ export const Title = styled.h1`
     `}
 `
 
-export const Text = styled.p`
+export const Text = styled.div`
   ${({ theme }) =>
     css`
       && {

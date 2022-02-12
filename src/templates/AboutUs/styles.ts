@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import media from 'styled-media-query'
 
 export const Container = styled.div`
   ${({ theme }) =>
@@ -14,10 +15,14 @@ export const Container = styled.div`
 export const AboutUs = styled.div`
   display: flex;
   margin-top: 4.8rem;
-  gap: 9.6rem;
+  gap: 6rem;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: left;
+
+  ${media.lessThan('medium')`
+        justify-content: center;
+      `}
 `
 
 export const NotFound = styled.h1`

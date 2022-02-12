@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import * as S from './styles'
 import { Author } from 'components/Author'
 import { PostProps } from 'types/api'
@@ -22,11 +23,15 @@ export const Article = ({
   return (
     <Link href={`/article/${slug}`}>
       <S.Container aria-label="main article">
-        <S.Cover
-          src={getImageUrl(cover.url)}
-          alt={cover.alternativeText}
-          loading="lazy"
-        />
+        <S.Cover>
+          <Image
+            src={getImageUrl(cover.url)}
+            alt={cover.alternativeText}
+            loading="lazy"
+            layout="fill"
+            objectFit="cover"
+          />
+        </S.Cover>
         <S.Details>
           <S.Date>{formatDate(created_at)}</S.Date>
           <S.Title>{titleFormat}</S.Title>

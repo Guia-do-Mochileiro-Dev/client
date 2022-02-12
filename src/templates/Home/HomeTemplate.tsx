@@ -63,7 +63,7 @@ export const HomeTemplate = ({ postPages }: PostsProps) => {
       <S.Container>
         {!!posts && (
           <InfiniteScroll
-            dataLength={posts.length}
+            dataLength={current.length}
             next={getMoreData}
             hasMore={hasMore}
             loader={<p>Loading...</p>}

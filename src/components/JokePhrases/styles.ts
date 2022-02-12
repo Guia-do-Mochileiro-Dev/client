@@ -74,6 +74,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   width: 73rem;
+  min-height: 6.9rem;
 `
 
 export const Phrase = styled.h1`

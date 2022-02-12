@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components'
-import media from 'styled-media-query'
 
 export const Container = styled.div`
   ${({ theme }) =>
@@ -13,14 +12,16 @@ export const Container = styled.div`
     `}
 `
 
-export const Cover = styled.img`
+export const Cover = styled.div`
   ${({ theme }) =>
     css`
       && {
-        border-radius: ${theme.border.radius};
+        position: relative;
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        img {
+          border-radius: ${theme.border.radius};
+        }
       }
     `}
 `
@@ -58,7 +59,7 @@ export const Title = styled.h1`
     `}
 `
 
-export const Text = styled.p`
+export const Text = styled.div`
   ${({ theme }) =>
     css`
       && {

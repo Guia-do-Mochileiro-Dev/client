@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { JokePhrases } from 'components/JokePhrases'
 import * as S from './styles'
@@ -19,11 +20,15 @@ export const Footer = () => {
       </S.Phrases>
       <S.Container>
         <Link href="/">
-          <S.Logo
-            src="/img/logo-branca.svg"
-            alt="Guia do Mochileiro Dev"
-            loading="lazy"
-          />
+          <S.Logo>
+            <Image
+              src="/img/logo-branca.svg"
+              alt="Guia do Mochileiro Dev"
+              loading="lazy"
+              layout="fill"
+              objectFit="cover"
+            />
+          </S.Logo>
         </Link>
         <S.Page>
           <Link href="/about-us">Quem Somos</Link>
