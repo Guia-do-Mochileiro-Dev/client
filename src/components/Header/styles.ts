@@ -28,12 +28,11 @@ export const Nav = styled.div`
     `}
 `
 
-export const Logo = styled.img`
-  ${({ theme }) =>
-    css`
-      && {
-        width: 13.5rem;
-        cursor: pointer;
-      }
-    `}
+export const Logo = styled.div`
+  position: relative;
+  width: 13.5rem;
+  height: 8rem;
+  img {
+    cursor: pointer;
+  }
 `

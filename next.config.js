@@ -1,3 +1,6 @@
 module.exports = {
-  reactStrictMode: true,
+  images: {
+    domains: ['localhost', 'guia-do-mochileiro-dev.herokuapp.com']
+  },
+  reactStrictMode: true
 }

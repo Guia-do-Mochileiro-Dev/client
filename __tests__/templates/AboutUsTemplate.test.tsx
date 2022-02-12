@@ -13,7 +13,7 @@ describe('<AboutUsTemplate />', () => {
               name: 'Letícia Silva',
               photo: {
                 alternativeText: '',
-                url: '/uploads/cover_5074a4bf56.png'
+                url: 'http://localhost:3000/_next/image?url=http%3A%2F%2Flocalhost%3A1337%2Fuploads%2Fcover_5074a4bf56.png&w=828&q=75'
               },
               role: 'Front-end Developer',
               description: 'Apaixonada por programação',

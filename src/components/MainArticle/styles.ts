@@ -12,14 +12,16 @@ export const Container = styled.div`
     `}
 `
 
-export const Cover = styled.img`
+export const Cover = styled.div`
   ${({ theme }) =>
     css`
       && {
-        border-radius: ${theme.border.radius};
+        position: relative;
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        img {
+          border-radius: ${theme.border.radius};
+        }
       }
     `}
 `

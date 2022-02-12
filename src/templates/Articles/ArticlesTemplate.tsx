@@ -1,4 +1,5 @@
 import { NextSeo } from 'next-seo'
+import Image from 'next/image'
 
 import { Author } from 'components/Author'
 import { Breadcrumb } from 'components/Breadcrumb'
@@ -36,11 +37,16 @@ export const ArticlesTemplate = ({
       />
       <S.Container>
         <Breadcrumb title={title} />
-        <S.Cover
-          src={getImageUrl(cover.url)}
-          alt={cover.alternativeText}
-          loading="lazy"
-        />
+        <S.Cover>
+          <Image
+            src={getImageUrl(cover.url)}
+            alt={cover.alternativeText}
+            loading="lazy"
+            layout="fill"
+            objectFit="cover"
+          />
+        </S.Cover>
+
         <S.Date>{formatDate(created_at)}</S.Date>
         <S.Title>{title}</S.Title>
         <S.Text dangerouslySetInnerHTML={{ __html: text }} />

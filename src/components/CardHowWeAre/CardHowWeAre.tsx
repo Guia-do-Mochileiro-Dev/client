@@ -1,4 +1,5 @@
 /* eslint-disable */
+import Image from 'next/image'
 import { AuthorProps } from 'types/api'
 import * as S from './styles'
 import { getImageUrl } from 'utils/getImageUrl'
@@ -18,11 +19,15 @@ export const CardHowWeAre = ({
 }: Omit<AuthorProps, 'id'>) => {
   return (
     <S.Container>
-      <S.Photo
-        src={getImageUrl(photo?.url)}
-        alt={photo?.alternativeText}
-        loading="lazy"
-      />
+      <S.Photo>
+        <Image
+          src={getImageUrl(photo?.url)}
+          alt={photo?.alternativeText}
+          loading="lazy"
+          layout="fill"
+          objectFit="cover"
+        />
+      </S.Photo>
 
       <S.Name>{name} </S.Name>
       <S.Role>{role}</S.Role>

@@ -24,11 +24,13 @@ export const Container = styled.div`
     }
   `}
 `
-export const Photo = styled.img`
+export const Photo = styled.div`
+  position: relative;
   width: 162px;
   height: 154px;
-  border-radius: 50%;
-  object-fit: cover;
+  img {
+    border-radius: 50%;
+  }
 `
 
 export const Name = styled.div`

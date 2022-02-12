@@ -5,17 +5,13 @@ export const Container = styled.div`
   align-items: center;
 `
 
-export const Photo = styled.img`
-  ${({ theme }) =>
-    css`
-      && {
-        width: 47px;
-        height: 47px;
-        border-radius: 60px;
-        color: ${theme.colors.black};
-        object-fit: cover;
-      }
-    `}
+export const Photo = styled.div`
+  position: relative;
+  width: 47px;
+  height: 47px;
+  img {
+    border-radius: 60px;
+  }
 `
 
 export const Name = styled.h1`
