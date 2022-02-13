@@ -3,7 +3,7 @@ import { useState } from 'react'
 import * as S from './styles'
 
 export const Searchbar = () => {
-  const [value, setValue] = useState<String>('')
+  const [value, setValue] = useState<string>('')
   const Router = useRouter()
 
   const handleSearch = (value: string) => {
