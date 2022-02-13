@@ -26,6 +26,7 @@ export const InputSearch = styled.input`
         border: none;
         width: 100%;
         outline: 0;
+        max-height: 5rem;
 
         ::placeholder {
           color: ${theme.colors.blueDark};

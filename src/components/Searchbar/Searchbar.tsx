@@ -17,7 +17,7 @@ export const Searchbar = () => {
   return (
     <S.Container>
       <S.InputSearch
-        type="text"
+        type="search"
         onKeyUp={(e) => handleSearch(e)}
         placeholder="Pesquisar..."
         aria-label="search"
