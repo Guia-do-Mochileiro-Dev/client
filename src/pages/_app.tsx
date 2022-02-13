@@ -1,7 +1,7 @@
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 
-import client, { ApiProvider } from 'graphql/client'
+import { ApiProvider } from 'graphql/client'
 
 import NextNprogress from 'nextjs-progressbar'
 

@@ -31,9 +31,9 @@ Search.getInitialProps = async ({ query: { result } }: IResult) => {
       }
     })
 
-    return { postPages }
+    return { revalidate: 60, postPages }
   } catch {
-    return { postPages: [] }
+    return { revalidate: 60, postPages: [] }
   }
 }
 

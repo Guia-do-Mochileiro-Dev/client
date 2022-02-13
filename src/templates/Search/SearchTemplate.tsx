@@ -19,7 +19,6 @@ export const SearchTemplate = ({ postPages }: PostsProps) => {
 
   const getMoreData = () => {
     if (current.length == postPages.length) {
-      console.log(`aaaaa`)
       setHasMore(false)
       return
     }
