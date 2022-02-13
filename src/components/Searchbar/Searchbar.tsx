@@ -6,7 +6,7 @@ export const Searchbar = () => {
   const [value, setValue] = useState<String>('')
   const Router = useRouter()
 
-  const handleSearch = (value) => {
+  const handleSearch = (value: string) => {
     if (value.length > 0)
       Router.push({
         pathname: '/search',
