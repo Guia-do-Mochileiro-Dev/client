@@ -38,7 +38,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     }
   })
 
-  if (!postPages) {
+  if (postPages.length === 0) {
     return { notFound: true }
   }
 

@@ -29,16 +29,20 @@ const Search = ({ postPages }: PostsProps) => {
 }
 
 Search.getInitialProps = async ({ query: { result } }: IResult) => {
-  const {
-    data: { postPages }
-  } = await client.query<PostsProps>({
-    query: GET_POSTS_SEARCH,
-    variables: {
-      text: result
-    }
-  })
+  try {
+    const {
+      data: { postPages }
+    } = await client.query<PostsProps>({
+      query: GET_POSTS_SEARCH,
+      variables: {
+        text: result
+      }
+    })
 
-  return { postPages }
+    return { postPages }
+  } catch {
+    return { postPages: [] }
+  }
 }
 
 export default Search

@@ -37,22 +37,24 @@ export const SearchTemplate = ({ postPages }: PostsProps) => {
   return (
     <>
       <S.Container>
-        <S.Title>{postPages?.length} resultados encontrados</S.Title>
         {postPages?.length > 0 && (
-          <InfiniteScroll
-            dataLength={current.length}
-            next={getMoreData}
-            hasMore={hasMore}
-            loader={<p>Loading...</p>}
-          >
-            <S.Posts>
-              {current?.map((post: PostProps) => (
-                <Article key={post.id} {...post} />
-              ))}
-            </S.Posts>
-          </InfiniteScroll>
+          <>
+            <S.Title>{postPages?.length} resultados encontrados</S.Title>
+            <InfiniteScroll
+              dataLength={current.length}
+              next={getMoreData}
+              hasMore={hasMore}
+              loader={<p>Loading...</p>}
+            >
+              <S.Posts>
+                {current?.map((post: PostProps) => (
+                  <Article key={post.id} {...post} />
+                ))}
+              </S.Posts>
+            </InfiniteScroll>
+          </>
         )}
-        {!postPages && <S.Title>Nenhum post encontrado!</S.Title>}
+        {postPages?.length === 0 && <S.Title>Nenhum post encontrado!</S.Title>}
       </S.Container>
     </>
   )
