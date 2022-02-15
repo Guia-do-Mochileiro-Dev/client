@@ -1,5 +1,4 @@
 import { NextSeo } from 'next-seo'
-import { useRouter } from 'next/dist/client/router'
 
 import client from 'graphql/client'
 import GET_POSTS_SEARCH from 'graphql/queries/getPostsSearch'
@@ -11,22 +10,15 @@ interface IResult {
   query: { result: PostsProps }
 }
 
-const Search = ({ postPages }: PostsProps) => {
-  const router = useRouter()
-
-  if (!router.isFallback && !postPages) {
-    return { notFound: true }
-  }
-  return (
-    <>
-      <NextSeo
-        title="Search | Guia do Mochileiro Dev"
-        description="Busque por algum post ou assunto"
-      />
-      <SearchTemplate postPages={postPages} />
-    </>
-  )
-}
+const Search = ({ postPages }: PostsProps) => (
+  <>
+    <NextSeo
+      title="Search | Guia do Mochileiro Dev"
+      description="Busque por algum post ou assunto"
+    />
+    <SearchTemplate postPages={postPages} />
+  </>
+)
 
 Search.getInitialProps = async ({ query: { result } }: IResult) => {
   try {
@@ -34,14 +26,15 @@ Search.getInitialProps = async ({ query: { result } }: IResult) => {
       data: { postPages }
     } = await client.query<PostsProps>({
       query: GET_POSTS_SEARCH,
+      fetchPolicy: 'no-cache',
       variables: {
         text: result
       }
     })
 
-    return { postPages }
+    return { revalidate: 60, postPages }
   } catch {
-    return { postPages: [] }
+    return { revalidate: 60, postPages: [] }
   }
 }
 

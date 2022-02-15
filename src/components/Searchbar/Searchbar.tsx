@@ -1,13 +1,13 @@
 import { useRouter } from 'next/dist/client/router'
-import { useState } from 'react'
 import * as S from './styles'
 
 export const Searchbar = () => {
-  const [value, setValue] = useState<string>('')
   const Router = useRouter()
 
-  const handleSearch = (value: string) => {
-    if (value.length > 0)
+  const handleSearch = (e: any) => {
+    const { value } = e.target
+
+    if (value.length > 0 && e.code === 'Enter')
       Router.push({
         pathname: '/search',
         query: { result: value.replaceAll(' ', '-') }
@@ -18,12 +18,11 @@ export const Searchbar = () => {
     <S.Container>
       <S.InputSearch
         type="search"
-        onChange={(e) => setValue(e.target.value)}
-        value={value}
+        onKeyUp={(e) => handleSearch(e)}
         placeholder="Pesquisar..."
         aria-label="search"
       />
-      <S.IconSearch onClick={() => handleSearch(value)} />
+      <S.IconSearch />
     </S.Container>
   )
 }

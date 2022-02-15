@@ -42,7 +42,6 @@ export const IconSearch = styled(Search)`
       && {
         color: ${theme.colors.blueDark};
         width: ${theme.spacings.xsmall};
-        cursor: pointer;
       }
     `}
 `
