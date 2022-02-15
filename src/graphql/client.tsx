@@ -2,7 +2,9 @@ import { ReactNode } from 'react'
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
 
 const client = new ApolloClient({
-  uri: process.env.GRAPHQL_HOST || 'http://localhost:1337/graphql',
+  uri:
+    process.env.GRAPHQL_HOST ||
+    'https://guia-do-mochileiro-dev.herokuapp.com/graphql',
   cache: new InMemoryCache()
 })
 
