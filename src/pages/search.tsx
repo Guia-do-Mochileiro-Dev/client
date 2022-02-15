@@ -26,6 +26,7 @@ Search.getInitialProps = async ({ query: { result } }: IResult) => {
       data: { postPages }
     } = await client.query<PostsProps>({
       query: GET_POSTS_SEARCH,
+      fetchPolicy: 'no-cache',
       variables: {
         text: result
       }
