@@ -53,7 +53,9 @@ export const SearchTemplate = ({ postPages }: PostsProps) => {
             </InfiniteScroll>
           </>
         )}
-        {postPages?.length === 0 && <S.Title>Nenhum post encontrado!</S.Title>}
+        {postPages?.length === 0 && (
+          <S.Title>Nenhum artigo encontrado!</S.Title>
+        )}
       </S.Container>
     </>
   )

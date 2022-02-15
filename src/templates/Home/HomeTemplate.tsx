@@ -61,7 +61,7 @@ export const HomeTemplate = ({ postPages }: PostsProps) => {
         }}
       />
       <S.Container>
-        {!!posts && (
+        {postPages.length > 0 && !!posts && (
           <InfiniteScroll
             dataLength={current.length}
             next={getMoreData}
@@ -82,7 +82,9 @@ export const HomeTemplate = ({ postPages }: PostsProps) => {
             </S.Posts>
           </InfiniteScroll>
         )}
-        {!posts && <S.NotFound>Nenhum post encontrado!</S.NotFound>}
+        {postPages.length === 0 && (
+          <S.NotFound>Nenhum artigo publicado!</S.NotFound>
+        )}
       </S.Container>
     </>
   )
