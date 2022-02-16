@@ -3,6 +3,6 @@ export default {
     type: 'website',
     locale: 'pt-BR',
     url: 'https://www.guiadomochileirodev.vercel.app/',
-    site_name: 'Guida do Mochileiro Dev'
+    site_name: 'Guia do Mochileiro Dev'
   }
 }
