@@ -2,7 +2,6 @@
 import Image from 'next/image'
 import { AuthorProps } from 'types/api'
 import * as S from './styles'
-import { getImageUrl } from 'utils/getImageUrl'
 
 const Midia = {
   github: <S.GithubIcon />,
@@ -21,7 +20,7 @@ export const CardHowWeAre = ({
     <S.Container>
       <S.Photo>
         <Image
-          src={getImageUrl(photo?.url)}
+          src={photo?.url}
           alt={photo?.alternativeText}
           loading="lazy"
           layout="fill"

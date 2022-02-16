@@ -4,7 +4,6 @@ import Image from 'next/image'
 import { Author } from 'components/Author'
 import { Breadcrumb } from 'components/Breadcrumb'
 import { PostProps } from 'types/api'
-import { getImageUrl } from 'utils/getImageUrl'
 import { formatDate } from 'utils/formatDate'
 import * as S from './styles'
 
@@ -39,7 +38,7 @@ export const ArticlesTemplate = ({
         <Breadcrumb title={title} />
         <S.Cover>
           <Image
-            src={getImageUrl(cover.url)}
+            src={cover.url}
             alt={cover.alternativeText}
             loading="lazy"
             layout="fill"

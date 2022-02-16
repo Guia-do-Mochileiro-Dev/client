@@ -3,7 +3,6 @@ import Link from 'next/link'
 import * as S from './styles'
 import { Author } from 'components/Author'
 import { PostProps } from 'types/api'
-import { getImageUrl } from 'utils/getImageUrl'
 import { formatDate } from 'utils/formatDate'
 
 export const MainArticle = ({
@@ -25,7 +24,7 @@ export const MainArticle = ({
       <S.Container aria-label="main article">
         <S.Cover>
           <Image
-            src={getImageUrl(cover.url)}
+            src={cover.url}
             alt={cover.alternativeText}
             loading="lazy"
             layout="fill"
