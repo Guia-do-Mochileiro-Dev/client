@@ -8,6 +8,7 @@ export const Container = styled.div`
         max-width: ${theme.grid.container};
         margin: 6rem auto;
         padding: 0 1rem;
+        min-height: calc(100vh - 400px);
       }
 
       .infinite-scroll-component {
