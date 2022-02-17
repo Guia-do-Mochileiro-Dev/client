@@ -7,7 +7,7 @@ export const Container = styled.div`
 
 export const NotFoundImage = styled.div`
   position: relative;
-  width: 70%;
+  width: 100%;
   height: 75vh;
   margin: auto;
   display: flex;
