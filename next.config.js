@@ -3,7 +3,7 @@ module.exports = {
     domains: [
       'localhost',
       'guia-do-mochileiro-dev.herokuapp.com',
-      'guia-do-mochileiro-dev.s3.amazonaws.com/'
+      'guia-do-mochileiro-dev.s3.amazonaws.com'
     ]
   },
   reactStrictMode: true
