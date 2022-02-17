@@ -21,12 +21,12 @@ export const ArticlesTemplate = ({
         title="Guia do Mochileiro Dev"
         description={title}
         openGraph={{
-          url: `https://guiadomochileirodev.vercel.app/article/${slug}`,
+          url: `https://guiadomochileirodev.netlify.app/article/${slug}`,
           title: 'Guia do Mochileiro Dev',
           description: title,
           images: [
             {
-              url: `https://guiadomochileirodev.vercel.app/img/${cover.url}`,
+              url: `https://guiadomochileirodev.netlify.app/img/${cover.url}`,
               width: 1280,
               height: 720,
               alt: title
