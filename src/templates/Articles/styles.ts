@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import media from 'styled-media-query'
 
 export const Container = styled.div`
   ${({ theme }) =>
@@ -57,6 +58,11 @@ export const Text = styled.div`
           font-weight: ${theme.font.light};
           margin: 2.5rem 0 7rem;
 
+          ${media.lessThan('large')`
+            padding: 2rem 0;
+            max-width: 100%;
+          `}
+
           a{
             border-bottom: 1px dashed ${theme.colors.green};
               color: ${theme.colors.green};
@@ -71,6 +77,16 @@ export const Text = styled.div`
             margin: 1.875rem auto;
           }
 
+
+          h1,
+          h2,
+          h3,
+          h4,
+          h5 {
+            margin: 2.4rem auto 1rem;
+          }
+
+
           p,
           li {
             code {
@@ -79,6 +95,10 @@ export const Text = styled.div`
           }
 
           code {
+
+          }
+
+          code, pre {
             background: #2d2d2d;
             color: white;
             padding: 0.1em;
@@ -86,6 +106,24 @@ export const Text = styled.div`
             white-space: normal;
             overflow-wrap: break-word;
             font-family: Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace;
+            word-wrap: break-word;
+
+          }
+
+          pre {
+            color: #ccc;
+            text-align: left;
+            white-space: pre;
+            word-spacing: normal;
+            word-break: normal;
+            word-wrap: normal;
+            line-height: 1.5;
+            tab-size: 4;
+            hyphens: none;
+
+            padding: 1em;
+            margin: 0.5em 0;
+            overflow: auto;
           }
 
           pre > code {

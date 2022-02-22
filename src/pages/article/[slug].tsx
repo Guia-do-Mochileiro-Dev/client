@@ -6,6 +6,7 @@ import client from 'graphql/client'
 import GET_POSTS from 'graphql/queries/getPosts'
 import GET_POST_SLUG from 'graphql/queries/getPostSlug'
 import ReactGA from 'react-ga'
+import markdownToHtml from 'utils/markdownToHtml'
 
 function Articles(props: PostProps) {
   ReactGA.modalview(`/${props.slug}`)
@@ -42,9 +43,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     return { notFound: true }
   }
 
+  const article = await markdownToHtml(postPages[0].text)
+
   return {
     revalidate: 60,
-    props: postPages[0]
+    props: { ...postPages[0], text: { article } }
   }
 }
 
