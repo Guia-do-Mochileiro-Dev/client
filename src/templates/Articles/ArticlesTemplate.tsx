@@ -48,7 +48,7 @@ export const ArticlesTemplate = ({
 
         <S.Date>{formatDate(created_at)}</S.Date>
         <S.Title>{title}</S.Title>
-        <S.Text dangerouslySetInnerHTML={{ __html: text.article }} />
+        <S.Text dangerouslySetInnerHTML={{ __html: text }} />
         {!!author && <Author {...author} />}
       </S.Container>
     </>
