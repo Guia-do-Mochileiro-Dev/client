@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { NextSeo } from 'next-seo'
-import { PostsProps, PostProps, ArticleProps } from 'types/api'
+import { PostsProps, ArticleProps } from 'types/api'
 
 import InfiniteScroll from 'react-infinite-scroll-component'
 
