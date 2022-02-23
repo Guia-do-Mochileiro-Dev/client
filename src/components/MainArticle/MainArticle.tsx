@@ -2,12 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import * as S from './styles'
 import { Author } from 'components/Author'
-import { PostProps } from 'types/api'
+import { ArticleProps } from 'types/api'
 import { formatDate } from 'utils/formatDate'
-
-interface IMainArticle extends Omit<PostProps, 'id' | 'text'> {
-  text: string
-}
 
 export const MainArticle = ({
   cover,
@@ -16,7 +12,7 @@ export const MainArticle = ({
   text,
   slug,
   author
-}: IMainArticle) => {
+}: ArticleProps) => {
   const titleFormat =
     title.length > 70 ? title.slice(0, 70).concat('...') : title
 
