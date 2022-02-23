@@ -26,6 +26,18 @@ export type PostProps = {
   cover: ImageProps
   created_at: string
   title: string
+  text: { article: string }
+  slug: string
+  author: {
+    name: string
+    photo: ImageProps
+  }
+}
+
+export type ArticleProps = {
+  cover: ImageProps
+  created_at: string
+  title: string
   text: string
   slug: string
   author: {

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { NextSeo } from 'next-seo'
-import { PostsProps, PostProps } from 'types/api'
+import { PostsProps, ArticleProps } from 'types/api'
 
 import InfiniteScroll from 'react-infinite-scroll-component'
 
@@ -11,7 +11,7 @@ import { Article } from 'components/Article'
 import MediaMatch from 'components/MediaMatch'
 
 export const HomeTemplate = ({ postPages }: PostsProps) => {
-  const lastedPost = !!postPages && postPages[postPages.length - 1]
+  const lastedPost = !!postPages && (postPages[postPages.length - 1] as any)
   const posts = !!postPages && (JSON.parse(JSON.stringify(postPages)) as any)
 
   !!postPages && posts.pop()
@@ -76,8 +76,8 @@ export const HomeTemplate = ({ postPages }: PostsProps) => {
               <MediaMatch lessThan="medium">
                 <Article {...lastedPost} />
               </MediaMatch>
-              {current.map((post: PostProps) => (
-                <Article key={post.id} {...post} />
+              {current.map((post: ArticleProps, index: number) => (
+                <Article key={`article-${index}`} {...post} />
               ))}
             </S.Posts>
           </InfiniteScroll>
