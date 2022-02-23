@@ -43,7 +43,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     return { notFound: true }
   }
 
-  const article = await markdownToHtml(postPages[0].text)
+  const article = (await markdownToHtml(postPages[0].text)) || ''
 
   return {
     revalidate: 60,

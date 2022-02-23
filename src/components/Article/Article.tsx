@@ -4,6 +4,9 @@ import * as S from './styles'
 import { Author } from 'components/Author'
 import { PostProps } from 'types/api'
 import { formatDate } from 'utils/formatDate'
+interface IArticle extends Omit<PostProps, 'id' | 'text'> {
+  text: string
+}
 
 export const Article = ({
   cover,
@@ -12,7 +15,7 @@ export const Article = ({
   text,
   slug,
   author
-}: Omit<PostProps, 'id'>) => {
+}: IArticle) => {
   const titleFormat =
     title.length > 50 ? title.slice(0, 50).concat('...') : title
 
