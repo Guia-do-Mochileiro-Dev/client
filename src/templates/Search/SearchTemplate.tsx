@@ -5,7 +5,7 @@ import * as S from './styles'
 import { Article } from 'components/Article'
 
 export const SearchTemplate = ({ postPages }: PostsProps) => {
-  const posts: any = { ...postPages }
+  const posts: any = [...postPages]
 
   return (
     <>
